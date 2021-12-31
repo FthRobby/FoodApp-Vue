@@ -5,6 +5,8 @@ import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'bootstrap-vue/dist/bootstrap-vue'
+import 'bootstrap-vue/dist/bootstrap-vue.min'
 import './assets/css/main.css'
 
 Vue.use(BootstrapVue)

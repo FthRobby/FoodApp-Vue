@@ -1,7 +1,9 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light">
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
     <div class="container">
-      <a class="navbar-brand" href="/">Loka Cafe</a>
+      <a class="navbar-brand" href="/">
+        <img src="../assets/images/logo.png" width="150" alt="">
+      </a>
       <button
         class="navbar-toggler"
         type="button"
