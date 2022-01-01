@@ -15,3 +15,17 @@
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
 }
+
+.breadcrumb {
+  background-color: #a0c9f5;
+  text-decoration: none;
+}
+
+.breadcrumb-item.active {
+  font-weight: bold;
+  color: #333;
+}
+
+.img-fluid {
+  border-radius: 15px;
+}

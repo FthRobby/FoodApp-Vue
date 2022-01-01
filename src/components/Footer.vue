@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col text-center">
-          2020 Copyright &copy; Fatah RobbySalam 
+          2020 &copy; Kopi Loka 
         </div>
       </div>
     </div>
