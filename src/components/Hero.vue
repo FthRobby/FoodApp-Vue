@@ -10,9 +10,9 @@
                 <strong>Menu Makanan Lezat,</strong> <br />ada di genggamanmu
               </h2>
               <p>pilih makanan favoritmu sekarang</p>
-              <button class="btn btn-sm btn-primary">
+              <router-link to="/foods" class="btn btn-sm btn-primary">
                 <b-icon-arrow-right></b-icon-arrow-right> Pesan Sekarang
-              </button>
+              </router-link>
             </div>
           </div>
         </div>
