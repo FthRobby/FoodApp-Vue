@@ -1,8 +1,10 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top bg-white">
+  <nav
+    class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top bg-white"
+  >
     <div class="container">
       <a class="navbar-brand" href="/">
-        <img src="../assets/images/logo.png" width="150" alt="">
+        <img src="../assets/images/logo.png" width="150" alt="" />
       </a>
       <button
         class="navbar-toggler"
@@ -29,21 +31,39 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <router-link class="nav-link" to="/keranjang">
-            Keranjang
-            <b-icon-bag></b-icon-bag>
-            <span class="badge badge-primary ml-2">0</span>
+              Keranjang
+              <b-icon-bag></b-icon-bag>
+              <span class="badge badge-primary ml-2">{{ jumlah_pesanans.length}}</span>
             </router-link>
           </li>
         </ul>
-
       </div>
     </div>
   </nav>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Navbar",
+  data() {
+    return {
+      jumlah_pesanans: [],
+    };
+  },
+  props: ["updatekeranjang"],
+  methods: {
+    setJumlah(data) {
+      this.jumlah_pesanans = data;
+    },
+  },
+  mounted() {
+    axios
+      .get("http://localhost:3000/keranjangs")
+      .then((response) => this.setJumlah(response.data))
+      .catch((error) => console.log(error));
+  },
 };
 </script>
 
