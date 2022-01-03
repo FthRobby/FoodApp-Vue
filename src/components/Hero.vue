@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          <img src="../assets/images/hero-image.png" width="100%" alt="Hero" />
+          <img src="../assets/images/11174.jpg" width="100%" alt="Hero" />
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@
     <div class="d-sm-block d-md-none">
       <div class="row mt-4">
         <div class="col-md-6">
-          <img src="../assets/images/hero-image.png" width="100%" alt="Hero" />
+          <img src="../assets/images/11174.jpg" width="100%" alt="Hero" />
         </div>
         <div class="col-md-6 mb-3">
           <div class="d-flex h-100">
@@ -35,9 +35,9 @@
                 <strong>Menu Makanan Lezat,</strong> <br />ada pada gadgetmu
               </h2>
               <p>pilih makanan favoritmu sekarang</p>
-              <button class="btn btn-sm btn-primary">
+             <router-link to="/foods" class="btn btn-sm btn-primary">
                 <b-icon-arrow-right></b-icon-arrow-right> Pesan Sekarang
-              </button>
+              </router-link>
             </div>
           </div>
         </div>

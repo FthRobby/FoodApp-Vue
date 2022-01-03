@@ -1,5 +1,5 @@
 <template>
-  <nav
+  <!-- <nav
     class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top bg-white"
   >
     <div class="container">
@@ -26,9 +26,6 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/foods">Daftar Menu</router-link>
           </li>
-          <!-- <li class="nav-item">
-            <router-link class="nav-link" to="/minuman">Minuman</router-link>
-          </li> -->
         </ul>
 
         <ul class="navbar-nav ml-auto">
@@ -42,7 +39,35 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> -->
+
+  <div>
+    <b-navbar toggleable="lg" type="light" variant="white" class="fixed-top">
+      <div class="container">
+        <b-navbar-brand href="/">
+          <img src="../assets/images/logo.png" width="150" alt="" />
+        </b-navbar-brand>
+
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav>
+            <router-link class="nav-link" to="/">Home</router-link>
+            <router-link class="nav-link" to="/foods">Daftar Menu</router-link>
+          </b-navbar-nav>
+
+          <!-- Right aligned nav items -->
+          <b-navbar-nav class="ml-auto">
+            <router-link class="nav-link" to="/keranjang">
+              Keranjang
+              <b-icon-bag></b-icon-bag>
+              <span class="badge badge-primary ml-2">{{ updateKeranjang ? updateKeranjang.length : jumlah_pesanans.length}}</span>
+            </router-link>
+          </b-navbar-nav>
+        </b-collapse>
+      </div>
+    </b-navbar>
+  </div>
 </template>
 
 <script>

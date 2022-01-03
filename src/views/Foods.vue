@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row mt-4">
         <div class="col">
-          <h2>Daftar <strong>Makanan</strong></h2>
+          <h2>Daftar <strong>Menu</strong></h2>
         </div>
       </div>
 

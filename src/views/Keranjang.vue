@@ -1,6 +1,6 @@
 <template>
   <div class="keranjang">
-    <Navbar :updateKeranjang="keranjangs"/>
+    <Navbar :updateKeranjang="keranjangs" />
     <div class="container mt-4">
       <!-- breadcrumb -->
       <div class="row">
@@ -83,8 +83,11 @@
                       </b-button-group> -->
                       <!-- <i class="fas fa-trash text-danger mr-4"></i>
                       <i class="fas fa-edit text-primary"></i> -->
-                      <button class="btn btn-sm btn-danger text-center" @click="hapusKeranjang(keranjang.id)">
-                        <i class="fas fa-trash"></i>
+                      <button
+                        class="btn btn-sm btn-danger text-center"
+                        @click="hapusKeranjang(keranjang.id)"
+                      >
+                        <b-icon-trash></b-icon-trash>
                       </button>
                     </div>
                   </td>
@@ -103,6 +106,30 @@
           </div>
         </div>
       </div>
+
+      <!-- Form checkout -->
+      <div class="row justify-content-end">
+        <div class="col-md-4">
+          <form class="mt-4" v-on:submit.prevent>
+            <div class="form-group">
+              <label for="nama">Nama :</label>
+              <input type="text" class="form-control" v-model="pesan.nama" />
+            </div>
+            <div class="form-group">
+              <label for="noMeja">Nomor Meja :</label>
+              <input type="text" class="form-control" v-model="pesan.noMeja" />
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-sm btn-success float-right"
+              @click="checkout"
+            >
+              <b-icon-cart></b-icon-cart> Pesan
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -110,7 +137,6 @@
 <script>
 import Navbar from "@/components/Navbar.vue";
 import axios from "axios";
-
 export default {
   name: "Keranjang",
   components: {
@@ -119,6 +145,7 @@ export default {
   data() {
     return {
       keranjangs: [],
+      pesan: {},
     };
   },
   methods: {
@@ -129,20 +156,50 @@ export default {
       axios
         .delete("http://localhost:3000/keranjangs/" + id)
         .then(() => {
-          this.$toast.success("Menu berhasil dihapus", {
+          this.$toast.error("Sukses Hapus Keranjang", {
             type: "error",
             position: "top-right",
             duration: 3000,
             dismissible: true,
           });
-
-          // Update data keranjang
+          // Update Data keranjang
           axios
             .get("http://localhost:3000/keranjangs")
             .then((response) => this.setKeranjangs(response.data))
             .catch((error) => console.log(error));
         })
         .catch((error) => console.log(error));
+    },
+    checkout() {
+      if (this.pesan.nama && this.pesan.noMeja) {
+        this.pesan.keranjangs = this.keranjangs;
+        axios
+          .post("http://localhost:3000/pesanans", this.pesan)
+          .then(() => {
+            
+            // Hapus Semua Keranjang 
+            this.keranjangs.map(function (item) {
+              return axios
+                .delete("http://localhost:3000/keranjangs/" + item.id)
+                .catch((error) => console.log(error));
+            });
+            this.$router.push({ path: "/pesanan-sukses" });
+            this.$toast.success("Sukses Dipesan", {
+              type: "success",
+              position: "top-right",
+              duration: 3000,
+              dismissible: true,
+            });
+          })
+          .catch((err) => console.log(err));
+      } else {
+        this.$toast.error("Nama dan Nomor Meja Harus diisi", {
+          type: "error",
+          position: "top-right",
+          duration: 3000,
+          dismissible: true,
+        });
+      }
     },
   },
   mounted() {
