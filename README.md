@@ -24,3 +24,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### JSON Server
+See [FoodApp | Backend](https://github.com/FthRobby/FoodApp-Vue-BackEnd)
