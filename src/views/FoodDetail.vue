@@ -57,13 +57,20 @@
                 v-model="pesan.keterangan"
               ></textarea>
             </div>
+
+            <router-link to="/foods" class="btn btn-sm btn-warning mr-3">
+              <b-icon-arrow-left></b-icon-arrow-left> Kembali
+            </router-link>
+
             <button
               @click="pemesanan"
               type="submit"
-              class="btn btn-sm btn-primary"
+              class="btn btn-sm btn-primary mr-3"
             >
               <b-icon-cart></b-icon-cart> Pesan
             </button>
+           
+            
           </form>
         </div>
       </div>

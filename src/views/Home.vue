@@ -2,6 +2,7 @@
   <div class="home">
     <Navbar />
     <div class="container mt-5">
+     
       <Hero />
 
       <div class="row mt-4">
@@ -16,8 +17,12 @@
       </div>
 
       <div class="row mb-4">
-        <div class="col-md-4 mt-4" v-for="product in products" :key="product.id">
-          <CardProduct :product="product"/>
+        <div
+          class="col-md-4 mt-4"
+          v-for="product in products"
+          :key="product.id"
+        >
+          <CardProduct :product="product" />
         </div>
       </div>
     </div>
@@ -42,19 +47,23 @@ export default {
   data() {
     return {
       products: [],
+      // carousel
+      slide: 0,
+      sliding: null,
     };
   },
   methods: {
     setProducts(data) {
       this.products = data;
     },
+    // carousel
   },
   // memanggil data untuk ditampilkan
   mounted() {
     axios
       .get("http://localhost:3000/best-products")
       .then((response) => this.setProducts(response.data))
-      .catch((error) => console.log(error))
+      .catch((error) => console.log(error));
   },
 };
 </script>

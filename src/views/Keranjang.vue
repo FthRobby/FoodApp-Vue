@@ -32,7 +32,7 @@
               <thead class="bg-dark text-white text-center">
                 <tr>
                   <th scope="col">No.</th>
-                  <!-- <th scope="col">Foto</th> -->
+                  <th scope="col">Foto</th>
                   <th scope="col">Menu</th>
                   <th scope="col">Jumlah</th>
                   <th scope="col">Keterangan</th>
@@ -47,14 +47,14 @@
                   :key="keranjang.id"
                 >
                   <th>{{ index + 1 }}</th>
-                  <!-- <td>
+                  <td>
                     <img
-                      :src=" '../assets/images/' + keranjang.products.gambar"
-                      class="img-fluid shadow"
-                      width="250"
+                      :src="require(`../assets/images/${keranjang.products.gambar}`)"
+                      class=" shadow"
+                      width="200"
                       alt=""
                     />
-                  </td> -->
+                  </td>
                   <td>
                     <strong>{{ keranjang.products.nama }}</strong>
                   </td>
@@ -93,7 +93,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td colspan="5" align="right" class="text-left">
+                  <td colspan="6" align="right" class="text-left">
                     <strong>Total Bayar :</strong>
                   </td>
                   <td align="right" class="text-center">
