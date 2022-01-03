@@ -122,7 +122,7 @@
 
             <button
               type="submit"
-              class="btn btn-sm btn-success float-right"
+              class="btn btn-sm btn-primary float-right"
               @click="checkout"
             >
               <b-icon-cart></b-icon-cart> Pesan
