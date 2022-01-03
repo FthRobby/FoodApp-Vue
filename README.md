@@ -1,6 +1,6 @@
 # foodapp-vue
 ### Project Result :
-   <img src="src/assets/result.png" width=600/>
+   <img src="src/assets/result2.png" width=600/>
 
 ## Project setup
 ```
