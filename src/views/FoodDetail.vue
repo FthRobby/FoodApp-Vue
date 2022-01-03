@@ -1,7 +1,7 @@
 <template>
   <div class="food-detail">
     <Navbar />
-    <div class="container mt-5">
+    <div class="container mt-4">
       <!-- breadcrumb -->
       <div class="row">
         <div class="col">
@@ -121,7 +121,13 @@ export default {
       .then((response) => this.setProduct(response.data))
       .catch((error) => console.log(error));
   },
-};
+  // mounted() {
+  //   axios
+  //   .get("http://localhost:3000/products-minuman/" +this.$route.params.id)
+  //   .then((response) => this.setProduct(response.data))
+  //     .catch((error) => console.log(error));
+  // }
+}; 
 </script>
 
 <style>

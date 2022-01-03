@@ -24,8 +24,11 @@
             <router-link class="nav-link" to="/">Home</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/foods">Food</router-link>
+            <router-link class="nav-link" to="/foods">Daftar Menu</router-link>
           </li>
+          <!-- <li class="nav-item">
+            <router-link class="nav-link" to="/minuman">Minuman</router-link>
+          </li> -->
         </ul>
 
         <ul class="navbar-nav ml-auto">
