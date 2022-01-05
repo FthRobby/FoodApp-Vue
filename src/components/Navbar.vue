@@ -42,7 +42,7 @@
   </nav> -->
 
   <div>
-    <b-navbar toggleable="lg" type="light" variant="white" class="fixed-top">
+    <b-navbar toggleable="lg" type="light" variant="white" class="fixed-top shadow">
       <div class="container">
         <b-navbar-brand href="/">
           <img src="../assets/images/logo.png" width="150" alt="" />
@@ -52,9 +52,9 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <router-link class="nav-link" to="/">Home</router-link>
-            <router-link class="nav-link" to="/foods">Daftar Menu</router-link>
-            <router-link class="nav-link" to="/about">Tentang Kami</router-link>
+            <router-link class="nav-link" to="/"> <i class="fas fa-home"></i> Home</router-link>
+            <router-link class="nav-link" to="/foods"> <i class="fas fa-clipboard-list"></i> Daftar Menu</router-link>
+            <router-link class="nav-link" to="/about"> <i class="fab fa-telegram-plane"></i> Tentang Kami</router-link>
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->

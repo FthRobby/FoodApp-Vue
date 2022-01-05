@@ -1,8 +1,8 @@
 <template>
   <div>
     <Navbar />
-    <div class="container">
-      <div class="row mt-4">
+    <div class="container" style="margin-top:90px;">
+      <div class="row">
         <div class="col">
           <h2>Daftar <strong>Menu</strong></h2>
         </div>

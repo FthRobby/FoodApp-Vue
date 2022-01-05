@@ -1,7 +1,7 @@
 <template>
   <div class="food-detail">
     <Navbar />
-    <div class="container mt-4">
+    <div class="container" style="margin-top:100px;">
       <!-- breadcrumb -->
       <div class="row">
         <div class="col">

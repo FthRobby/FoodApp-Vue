@@ -1,7 +1,7 @@
 <template>
   <div class="keranjang">
     <Navbar :updateKeranjang="keranjangs" />
-    <div class="container mt-4">
+    <div class="container" style="margin-top:100px;">
       <!-- breadcrumb -->
       <div class="row">
         <div class="col">
@@ -24,10 +24,11 @@
       </div>
 
       <div class="row">
+        
         <div class="col">
           <h2>Keranjang <strong>Saya</strong></h2>
 
-          <div class="table-responsive mt-3">
+          <div class="table-responsive-sm mt-3">
             <table class="table">
               <thead class="bg-dark text-white text-center">
                 <tr>
@@ -41,7 +42,7 @@
                   <th scope="col">Aksi</th>
                 </tr>
               </thead>
-              <tbody class="text-center">
+              <tbody class="">
                 <tr
                   v-for="(keranjang, index) in keranjangs"
                   :key="keranjang.id"
@@ -51,7 +52,7 @@
                     <img
                       :src="require(`../assets/images/${keranjang.products.gambar}`)"
                       class=" shadow"
-                      width="200"
+                      width="150"
                       alt=""
                     />
                   </td>
@@ -104,6 +105,7 @@
               </tbody>
             </table>
           </div>
+          <router-link to="/foods" class="btn btn-primary btn-sm"><i class="fa fa-clipboard-list"></i> Tambah Menu</router-link>
         </div>
       </div>
 
@@ -111,6 +113,8 @@
       <div class="row justify-content-end">
         <div class="col-md-4">
           <form class="mt-4" v-on:submit.prevent>
+            <h3 class="text-center">Data <strong>Pemesan</strong> </h3>
+            <hr class="bg-dark">
             <div class="form-group">
               <label for="nama">Nama :</label>
               <input type="text" class="form-control" v-model="pesan.nama" />
@@ -172,18 +176,22 @@ export default {
     },
     checkout() {
       if (this.pesan.nama && this.pesan.noMeja) {
+
         this.pesan.keranjangs = this.keranjangs;
+
         axios
           .post("http://localhost:3000/pesanans", this.pesan)
           .then(() => {
             
-            // Hapus Semua Keranjang 
+            // Hapus semua isi keranjang Jika semua item di checkout
             this.keranjangs.map(function (item) {
               return axios
                 .delete("http://localhost:3000/keranjangs/" + item.id)
                 .catch((error) => console.log(error));
             });
             this.$router.push({ path: "/pesanan-sukses" });
+
+            // Toast jika berhasil di checkout
             this.$toast.success("Sukses Dipesan", {
               type: "success",
               position: "top-right",
@@ -193,6 +201,7 @@ export default {
           })
           .catch((err) => console.log(err));
       } else {
+        // Toast gagal memesan jika form tidak diisi
         this.$toast.error("Nama dan Nomor Meja Harus diisi", {
           type: "error",
           position: "top-right",
