@@ -5,7 +5,7 @@
      
       <Hero />
 
-      <div class="row mt-4">
+      <div class="row mt-4" data-aos="fade-left">
         <div class="col">
           <h2>Menu <strong>Favorit</strong></h2>
         </div>
@@ -21,6 +21,7 @@
           class="col-md-4 mt-4"
           v-for="product in products"
           :key="product.id"
+          data-aos="zoom-in-out"
         >
           <CardProduct :product="product" />
         </div>

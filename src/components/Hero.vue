@@ -26,11 +26,11 @@
     <div class="d-sm-block d-md-none">
       <div class="row mt-4">
         <div class="col-md-6">
-          <img src="../assets/images/11174.jpg" width="100%" alt="Hero" />
+          <img src="../assets/images/11174.jpg" width="100%" class="img-fluid" alt="Hero" />
         </div>
         <div class="col-md-6 mb-3">
           <div class="d-flex h-100">
-            <div class="justify-content-center align-self-center">
+            <div class="justify-content-center align-self-center" data-aos="fade-right">
               <h2>
                 <strong>Menu Makanan Lezat,</strong> <br />ada pada gadgetmu
               </h2>

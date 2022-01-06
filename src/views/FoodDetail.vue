@@ -11,7 +11,7 @@
                 <router-link to="/" class="text-dark">Home</router-link>
               </li>
               <li class="breadcrumb-item">
-                <router-link to="/foods" class="text-dark">Makanan</router-link>
+                <router-link to="/foods" class="text-dark">Daftar Menu</router-link>
               </li>
               <li class="breadcrumb-item active" aria-current="page">
                 Detail Pesanan
