@@ -28,7 +28,7 @@
         <div class="col">
           <h2>Keranjang <strong>Saya</strong></h2>
 
-          <div class="table-responsive-sm mt-3">
+          <div class="table-responsive mt-3">
             <table class="table">
               <thead class="bg-dark text-white text-center">
                 <tr>
