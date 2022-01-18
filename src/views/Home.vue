@@ -5,7 +5,7 @@
      
       <Hero />
 
-      <div class="row mt-4" data-aos="fade-left">
+      <div class="row mt-4" data-aos="fade-right">
         <div class="col">
           <h2><strong>Favorit</strong> Menu</h2>
         </div>
@@ -16,7 +16,7 @@
         </div>
       </div>
 
-      <div class="mb-4 container">
+      <div class="mb-4 container col-sm">
         <!-- <div
           class="col-md-4 mt-4"
           v-for="product in products"
@@ -31,9 +31,7 @@
             style="text-shadow: 0px 0px 2px #000;color:#000 !important;"
             fade
             controls
-            indicators
-            img-width="1024"
-            img-height="480"        
+            indicators        
           >
 
             <b-carousel-slide

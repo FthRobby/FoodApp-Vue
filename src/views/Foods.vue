@@ -6,11 +6,29 @@
       <img src="../assets/fei-image/menu-list.jpg" class="img-fluid" width="300" alt="">
     </div> -->
 
-    <div class="container" style="margin-top: 100px">
-      <div class="row">
+    <div style="margin-top:100px;">
+      
+    <div class="container">
+
+      <div class="row mt-5" data-aos="fade-right">
         <div class="col">
-          <h2><strong>Menu</strong> List</h2>
-          <hr class="bg-dark">
+          <h2><strong>List</strong> Menu</h2>
+        </div>
+        <div class="col">
+          <b-button v-b-modal.modal-center class="float-right btn-fei btn-sm"><b-icon-list></b-icon-list> List Menu</b-button>
+          <!-- open modal -->
+          <b-modal id="modal-center" centered title="Fei Cafe Menu" ok-only cancel-disabled>
+            <img src="../assets/image/menu-list.jpg" class="img-fluid" alt="">
+            <template #modal-footer="{ ok }">
+              <!-- Emulate built in modal footer ok and cancel button actions -->
+              <b-button class="btn-fei" @click="ok()">
+                Close
+              </b-button>
+            </template>
+          </b-modal>
+
+          
+          
         </div>
       </div>
 
@@ -46,6 +64,7 @@
           <CardProduct :product="product" />
         </div>
       </div>
+    </div>
     </div>
   </div>
 </template>

@@ -9,13 +9,13 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <router-link to="/" class="text-dark">Home</router-link>
+                <router-link to="/" class="text-dark"><b-icon icon="house-fill" scale="1.25" shift-v="1.25" aria-hidden="true"></b-icon> Home</router-link>
               </li>
               <li class="breadcrumb-item">
-                <router-link to="/foods" class="text-dark">Daftar Menu</router-link>
+                <router-link to="/foods" class="text-dark">Menu List</router-link>
               </li>
               <li class="breadcrumb-item active" aria-current="page">
-                Detail Pesanan
+                Menu Details
               </li>
             </ol>
           </nav>
