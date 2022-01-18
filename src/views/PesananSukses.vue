@@ -7,7 +7,7 @@
       <div class="col text-center mt-5">
         <h2><strong>Sukses!!</strong></h2>
         <h4>Pesanan Anda Segera Diproses</h4>
-        <img src="../assets/images/success.png" class="img-fluid mt-5" alt="">
+        <img src="../assets/success.png" width="500" class="img-fluid mt-5" alt="">
         <br>
         <h4 class="">Silahkan Menunggu</h4>
       </div>

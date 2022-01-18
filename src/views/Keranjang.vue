@@ -50,8 +50,8 @@
                   <th>{{ index + 1 }}</th>
                   <td>
                     <img
-                      :src="require(`../assets/images/${keranjang.products.gambar}`)"
-                      class=" shadow"
+                      :src="require(`../assets/image/${keranjang.products.gambar}`)"
+                      class="rounded shadow"
                       width="150"
                       alt=""
                     />
@@ -105,7 +105,7 @@
               </tbody>
             </table>
           </div>
-          <router-link to="/foods" class="btn btn-primary btn-sm"><i class="fa fa-clipboard-list"></i> Tambah Menu</router-link>
+          <router-link to="/foods" class="btn btn-dark btn-sm"><i class="fa fa-clipboard-list"></i> Tambah Menu</router-link>
         </div>
       </div>
 
@@ -126,7 +126,7 @@
 
             <button
               type="submit"
-              class="btn btn-sm btn-primary float-right"
+              class="btn btn-sm btn-dark float-right"
               @click="checkout"
             >
               <b-icon-cart></b-icon-cart> Pesan

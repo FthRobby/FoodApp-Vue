@@ -7,17 +7,25 @@
 }
 
 .card-product {
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
-.card-img-top {
-  border-radius: 15px;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
+.card-title {
+  font-size: 17px;
+  font-weight: bolder;
+}
+
+.card p {
+  font-size: 15px;
+}
+
+.card img {
+  width: 200px;
+  height: 180px;
 }
 
 .breadcrumb {
-  background-color: #a0c9f5;
+  background-color: hsl(208, 19%, 83%);
   text-decoration: none;
 }
 
@@ -26,6 +34,30 @@
   color: #333;
 }
 
+.navbar-brand img {
+  width: 50px;
+}
+
 .img-fluid {
   border-radius: 15px;
+}
+
+.btn-buy:hover {
+  background-color: #2b1700;
+  color: #fff;
+}
+
+.btn-fei:hover {
+  background-color: #5e4932;
+  color: #fff;
+}
+
+.btn-fei {
+  background-color: #583710;
+  color: rgb(228, 213, 213);
+}
+
+.btn-buy {
+  background-color: #583710;
+  color: rgb(228, 213, 213);
 }

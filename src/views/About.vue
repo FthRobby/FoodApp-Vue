@@ -2,10 +2,10 @@
   <div class="about">
     <Navbar />
     <div class="container" style="margin-top: 100px">
-      <h3>Tentang Kami</h3>
+      <h3 class="mb-4"><strong>About</strong> Us</h3>
 
       <!-- carousel -->
-      <div>
+      <!-- <div>
         <b-carousel
           id="carousel-1"
           v-model="slide"
@@ -16,7 +16,7 @@
           img-height="480"
           style="text-shadow: 1px 1px 2px #333"
         >
-          <!-- Text slides with image -->
+          
           <b-carousel-slide
             caption="First slide"
             text="Nulla vitae elit libero, a pharetra augue mollis interdum."
@@ -30,8 +30,11 @@
             :img-src="require('../assets/result2.png')"
           ></b-carousel-slide>
         </b-carousel>
-      </div>
+      </div> -->
       <!-- end carousel -->
+      
+
+
     </div>
   </div>
 </template>

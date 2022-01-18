@@ -42,27 +42,27 @@
   </nav> -->
 
   <div>
-    <b-navbar toggleable="lg" type="light" variant="white" class="fixed-top shadow">
+    <b-navbar toggleable="lg" type="light" class="fixed-top navbar-light shadow bg-white">
       <div class="container">
         <b-navbar-brand href="/">
-          <img src="../assets/images/logo.png" width="150" alt="" />
+          <img src="../assets/logo/logo.png" class="rounded-circle" alt="" />
         </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <router-link class="nav-link" to="/"> <i class="fas fa-home"></i> Home</router-link>
-            <router-link class="nav-link" to="/foods"> <i class="fas fa-clipboard-list"></i> Daftar Menu</router-link>
-            <router-link class="nav-link" to="/about"> <i class="fab fa-telegram-plane"></i> Tentang Kami</router-link>
+            <router-link class="nav-link text-dark" to="/"> <i class="fas fa-home"></i> Home</router-link>
+            <router-link class="nav-link text-dark" to="/foods"> <i class="fas fa-clipboard-list"></i> Menu List</router-link>
+            <router-link class="nav-link text-dark" to="/about"> <i class="fab fa-telegram-plane"></i> About Fei</router-link>
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
-            <router-link class="nav-link" to="/keranjang">
-              Keranjang
+            <router-link class="nav-link text-dark" to="/keranjang">
+              Cart
               <b-icon-bag></b-icon-bag>
-              <span class="badge badge-primary ml-2">{{ updateKeranjang ? updateKeranjang.length : jumlah_pesanans.length}}</span>
+              <span class="badge badge-dark ml-2">{{ updateKeranjang ? updateKeranjang.length : jumlah_pesanans.length}}</span>
             </router-link>
           </b-navbar-nav>
         </b-collapse>

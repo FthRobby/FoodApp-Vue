@@ -1,10 +1,16 @@
 <template>
   <div>
     <Navbar />
+
+    <!-- <div class="container d-sm-block d-md-none d-flex justify-content-center" style="margin-top: 100px">
+      <img src="../assets/fei-image/menu-list.jpg" class="img-fluid" width="300" alt="">
+    </div> -->
+
     <div class="container" style="margin-top: 100px">
       <div class="row">
         <div class="col">
-          <h2>Daftar <strong>Menu</strong></h2>
+          <h2><strong>Menu</strong> List</h2>
+          <hr class="bg-dark">
         </div>
       </div>
 
@@ -22,8 +28,9 @@
             />
 
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">
-                <b-icon-search></b-icon-search>
+              <span class="input-group-text bg-dark" id="basic-addon1">
+                <!-- <b-icon-search></b-icon-search> -->
+                <i class="fa fa-search text-white"></i>
               </span>
             </div>
           </div>
