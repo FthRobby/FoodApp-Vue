@@ -44,6 +44,34 @@
             />
           </div>
         </div>
+        <br>
+      </div>
+
+      <div class="row mt-3">
+        <h2 class="col mt-3 float-right text-right"><strong>A Place for</strong> <br> Toast Lovers to Come Back</h2>
+         <div class="d-flex h-100 container">
+          <div class="col-sm border mr-1" style="padding:0;">
+            <img
+              src="../assets/image/banner-1.jpg"
+              width="100%"
+              alt="Hero"
+            />
+          </div>
+          <div class="col-sm border mr-1" style="padding:0;">
+            <img
+              src="../assets/image/banner-2.jpg"
+              width="100%"
+              alt="Hero"
+            />
+          </div>
+          <div class="col-sm border" style="padding:0;">
+            <img
+              src="../assets/image/banner-3.jpg"
+              width="100%"
+              alt="Hero"
+            />
+          </div>
+        </div>
       </div>
     </div>
 

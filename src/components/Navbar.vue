@@ -48,7 +48,12 @@
           <img src="../assets/logo/logo.png" class="rounded-circle" alt="" />
         </b-navbar-brand>
 
-        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+        <b-navbar-toggle target="nav-collapse">
+          <template #default="{ expanded }">
+            <b-icon v-if="expanded" icon="chevron-bar-up" font-scale="1.5"></b-icon>
+            <b-icon v-else icon="chevron-bar-down" font-scale="1.5"></b-icon>
+          </template>
+        </b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
