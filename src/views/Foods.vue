@@ -12,10 +12,10 @@
 
       <div class="row mt-5" data-aos="fade-right">
         <div class="col">
-          <h2><strong>List</strong> Menu</h2>
+          <h2><strong>Menu</strong> List</h2>
         </div>
         <div class="col">
-          <b-button v-b-modal.modal-center class="float-right btn-fei btn-sm"><b-icon-list></b-icon-list> List Menu</b-button>
+          <b-button v-b-modal.modal-center class="float-right btn-fei btn-sm"><b-icon-list></b-icon-list> Menu List</b-button>
           <!-- open modal -->
           <b-modal id="modal-center" centered title="Fei Cafe Menu" ok-only cancel-disabled>
             <img src="../assets/image/menu-list.jpg" class="img-fluid" alt="">
@@ -33,7 +33,7 @@
       </div>
 
       <div class="rom mt-3">
-        <div class="col">
+        <div class="col" data-aos="fade-up">
           <div class="input-group mb-3">
             <input
               v-model="search"

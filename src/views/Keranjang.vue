@@ -1,32 +1,95 @@
 <template>
   <div class="keranjang">
     <Navbar :updateKeranjang="keranjangs" />
-    <div class="container" style="margin-top:100px;">
+    <div class="container" style="margin-top: 100px">
       <!-- breadcrumb -->
       <div class="row">
         <div class="col">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <router-link to="/" class="text-dark"><b-icon icon="house-fill" scale="1.25" shift-v="1.25" aria-hidden="true"></b-icon> Home</router-link>
+                <router-link to="/" class="text-dark"
+                  ><b-icon
+                    icon="house-fill"
+                    scale="1.25"
+                    shift-v="1.25"
+                    aria-hidden="true"
+                  ></b-icon>
+                  Home</router-link
+                >
               </li>
               <li class="breadcrumb-item">
-                <router-link to="/foods" class="text-dark">Menu List</router-link>
+                <router-link to="/foods" class="text-dark"
+                  >Menu List</router-link
+                >
               </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                Cart
-              </li>
+              <li class="breadcrumb-item active" aria-current="page">Cart</li>
             </ol>
           </nav>
         </div>
       </div>
 
       <div class="row">
-        
         <div class="col">
           <h2>Keranjang <strong>Saya</strong></h2>
 
-          <div class="table-responsive mt-3">
+          <div
+            class="card shadow card-product mb-3"
+            style="max-width: 540px"
+            v-for="keranjang in keranjangs"
+            :key="keranjang.id"
+          >
+            <div class="row no-gutters">
+              <div class="col-4">
+                <img
+                  :src="require(`../assets/image/${keranjang.products.gambar}`)"
+                  class="img-fluid card-img h-100"
+                />
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{ keranjang.products.nama }}</h5>
+                  <p class="card-text">
+                    {{ keranjang.keterangan ? keranjang.keterangan : "-" }}
+                  </p>
+                  <div class="row">
+                    <p class="card-text col font-weight-bolder">
+                      Jumlah : {{ keranjang.jumlah_pemesanan }}
+                    </p>
+                    <p class="card-text col font-weight-bolder">
+                      Rp :
+                      {{
+                        keranjang.products.harga * keranjang.jumlah_pemesanan
+                      }}
+                    </p>
+                  </div>
+                  <div class="card-link">
+                    <button
+                    class="btn btn-sm border float-right text-center mb-1"
+                    @click="hapusKeranjang(keranjang.id)"
+                  >
+                    <i class="fas fa-trash text-fei"></i>
+                  </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row no-gutters mt-5">
+            <div class="col">
+              <router-link to="/foods" class="btn btn-fei btn-sm"
+                ><i class="fa fa-clipboard-list"></i> Tambah Menu
+              </router-link>
+            </div>
+            <div class="col">
+              <p class="font-weight-bolder float-right">
+                Total : Rp. {{ totalBayar }}
+              </p>
+            </div>
+          </div>
+
+          <!-- <div class="table-responsive mt-3">
             <table class="table">
               <thead class="bg-dark text-white text-center">
                 <tr>
@@ -40,7 +103,7 @@
                   <th scope="col">Aksi</th>
                 </tr>
               </thead>
-              <tbody class="">
+              <tbody>
                 <tr
                   v-for="(keranjang, index) in keranjangs"
                   :key="keranjang.id"
@@ -72,22 +135,14 @@
                   </td>
                   <td>
                     <div class="text-center">
-                      <!-- <b-button-group class="mr-1 bg-danger">
-                        <b-button title="Hapus" variant="danger">
-                          <b-icon icon="trash" aria-hidden="true"></b-icon>
-                        </b-button>
-                        <b-button title="Edit">
-                          <b-icon icon="cart-plus" aria-hidden="true"></b-icon>
-                        </b-button>
-                      </b-button-group> -->
-                      <!-- <i class="fas fa-trash text-danger mr-4"></i>
-                      <i class="fas fa-edit text-primary"></i> -->
+                      
                       <button
                         class="btn btn-sm btn-danger text-center"
                         @click="hapusKeranjang(keranjang.id)"
                       >
                         <b-icon-trash></b-icon-trash>
                       </button>
+                      
                     </div>
                   </td>
                 </tr>
@@ -104,33 +159,48 @@
             </table>
           </div>
           <router-link to="/foods" class="btn btn-dark btn-sm"><i class="fa fa-clipboard-list"></i> Tambah Menu</router-link>
+           -->
         </div>
       </div>
 
-      <!-- Form checkout -->
-      <div class="row justify-content-end">
-        <div class="col-md-4">
-          <form class="mt-4" v-on:submit.prevent>
-            <h3 class="text-center">Data <strong>Pemesan</strong> </h3>
-            <hr class="bg-dark">
-            <div class="form-group">
-              <label for="nama">Nama :</label>
-              <input type="text" class="form-control" v-model="pesan.nama" />
-            </div>
-            <div class="form-group">
-              <label for="noMeja">Nomor Meja :</label>
-              <input type="text" class="form-control" v-model="pesan.noMeja" />
-            </div>
-
-            <button
-              type="submit"
-              class="btn btn-sm btn-dark float-right"
-              @click="checkout"
+      <b-button v-b-modal.modal-center class="float-right btn-fei btn-sm"
+        ><b-icon-cart></b-icon-cart> Pesan</b-button
+      >
+      <b-modal
+        id="modal-center"
+        centered
+        title="Fei Cafe Menu"
+        ok-only
+        cancel-disabled
+      >
+        <!-- Form checkout -->
+        <form class="mt-4" v-on:submit.prevent>
+          <h3 class="text-center">Data <strong>Pemesan</strong></h3>
+          <hr class="bg-dark" />
+          <div class="form-group">
+            <label for="nama">Nama :</label>
+            <input type="text" class="form-control" v-model="pesan.nama" />
+          </div>
+          <div class="form-group">
+            <label for="noMeja">Nomor Meja :</label>
+            <input type="text" class="form-control" v-model="pesan.noMeja" />
+            <i class="text-muted" style="font-size: 12px"
+              >* klik tombol dibawah untuk konfirmasi pesanan</i
             >
-              <b-icon-cart></b-icon-cart> Pesan
-            </button>
-          </form>
-        </div>
+          </div>
+
+          <button type="submit" class="btn btn-sm btn-dark" @click="checkout">
+            <b-icon-cart></b-icon-cart> Konfirmasi Pesanan
+          </button>
+        </form>
+        <template #modal-footer="{ ok }">
+          <!-- Emulate built in modal footer ok and cancel button actions -->
+          <b-button class="btn-danger" @click="ok()"> Cancel </b-button>
+        </template>
+      </b-modal>
+
+      <div class="row justify-content-end">
+        <div class="col-md-4"></div>
       </div>
     </div>
   </div>
@@ -174,13 +244,11 @@ export default {
     },
     checkout() {
       if (this.pesan.nama && this.pesan.noMeja) {
-
         this.pesan.keranjangs = this.keranjangs;
 
         axios
           .post("http://localhost:3000/pesanans", this.pesan)
           .then(() => {
-            
             // Hapus semua isi keranjang Jika semua item di checkout
             this.keranjangs.map(function (item) {
               return axios
@@ -225,5 +293,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="card shadow card-product mb-3" style="max-width: 540px;">
+    <div class="card shadow card-product mb-3" style="max-width: 540px;">
       <div class="row no-gutters">
         <div class="col-4">
           <img :src="require(`../assets/image/${product.gambar}`)" class="img-fluid card-img h-100">

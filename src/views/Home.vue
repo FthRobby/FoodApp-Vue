@@ -16,22 +16,60 @@
         </div>
       </div>
 
-      <div class="mb-4 container col-sm">
-        <!-- <div
-          class="col-md-4 mt-4"
-          v-for="product in products"
-          :key="product.id"
-          data-aos="zoom-in-out"
+     
+      <!-- owl carousel -->
+      <div class="mb-4 container ">
+        <carousel
+          :autoplay="true"
+          :items="3"
+          :loop="true"
+          :margin="10"
+          :nav="false"
+          :dots="false"
+          :responsive="{
+            0: {
+              items: 1.2,
+            },
+            768: {
+              items: 2.2,
+            },
+          }"
         >
-          <CardProduct :product="product" />
-        </div> -->
+          <div class="carousel">
+            <div class="carousel-text mb-2">
+              Bolognese <br>
+              <router-link to="/foods/1" class="btn btn-sm btn-fei"><b-icon-cart></b-icon-cart> Buy</router-link>
+            </div>
+            <img src="../assets/image/bolognese.jpg" alt="">
+          </div>
 
-          <b-carousel
+          <div class="carousel">
+            <div class="carousel-text mb-2">
+              Deluxe Fei Coffee <br>
+              <router-link to="/foods/2" class="btn btn-sm btn-fei"><b-icon-cart></b-icon-cart> Buy</router-link>
+            </div>
+            <img src="../assets/image/deluxe-fei-coffee.jpg" alt="">
+          </div>
+
+          <div class="carousel">
+            <div class="carousel-text mb-2">
+              Fei Fries with Sausage <br>
+              <router-link to="/foods/3" class="btn btn-sm btn-fei"><b-icon-cart></b-icon-cart> Buy</router-link>
+            </div>
+            <img src="../assets/image/fei-fries-with-sausage.jpg" alt="">
+          </div>
+
+        </carousel>
+
+
+
+          <!-- <b-carousel
             id="carousel-fade"
             style="text-shadow: 0px 0px 2px #000;color:#000 !important;"
             fade
             controls
             indicators        
+            width="100%"
           >
 
             <b-carousel-slide
@@ -58,7 +96,7 @@
               <router-link to="/foods/3" class="btn btn-sm btn-fei"><b-icon-cart></b-icon-cart> Buy</router-link>
             </b-carousel-slide>
 
-          </b-carousel>
+          </b-carousel> -->
       </div>
     </div>
   </div>
@@ -69,12 +107,14 @@
 import Navbar from "@/components/Navbar.vue";
 import Hero from "@/components/Hero.vue";
 import axios from "axios";
+import carousel from "vue-owl-carousel";
 
 export default {
   name: "Home",
   components: {
     Navbar,
     Hero,
+    carousel
   },
   // menampilkan data
   data() {

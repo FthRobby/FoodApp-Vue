@@ -26,6 +26,7 @@ new Vue({
     AOS.init({
       duration: 900,
       delay: 100,
+      once: true,
     });
   },
   router,

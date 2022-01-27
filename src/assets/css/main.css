@@ -61,3 +61,29 @@
   background-color: #583710;
   color: rgb(228, 213, 213);
 }
+
+.text-fei {
+  color: #583710;
+}
+
+.carousel {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.carousel-text {
+  position: absolute;
+  bottom: 0;
+  font-size: 1.4rem;
+  margin-left: 30px;
+  z-index: 551;
+  color: #2b1700;
+}
+
+@media (min-width: 768px) {
+  .col-md-4 {
+    flex: none;
+    max-width: none;
+  }
+}

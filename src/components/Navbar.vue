@@ -46,6 +46,7 @@
       <div class="container">
         <b-navbar-brand href="/">
           <img src="../assets/logo/logo.png" class="rounded-circle" alt="" />
+          <strong> FEI</strong>CAFE
         </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse">
