@@ -184,18 +184,17 @@
           <div class="form-group">
             <label for="noMeja">Nomor Meja :</label>
             <input type="text" class="form-control" v-model="pesan.noMeja" />
-            <i class="text-muted" style="font-size: 12px"
-              >* klik tombol dibawah untuk konfirmasi pesanan</i
-            >
           </div>
-
-          <button type="submit" class="btn btn-sm btn-dark" @click="checkout">
-            <b-icon-cart></b-icon-cart> Konfirmasi Pesanan
-          </button>
         </form>
         <template #modal-footer="{ ok }">
           <!-- Emulate built in modal footer ok and cancel button actions -->
-          <b-button class="btn-danger" @click="ok()"> Cancel </b-button>
+          <!-- <button type="submit" class="btn btn-sm btn-dark" @click="checkout">
+            <b-icon-cart></b-icon-cart> Konfirmasi Pesanan
+          </button> -->
+          <b-button type="submit" class="btn-fei" @click="checkout">
+            <b-icon-cart></b-icon-cart> Pesan
+          </b-button>
+          <b-button class="btn-danger" @click="ok()"> Batal </b-button>
         </template>
       </b-modal>
 
