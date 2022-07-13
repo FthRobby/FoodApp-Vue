@@ -65,6 +65,8 @@
         </div>
       </div>
     </div>
+
+    <go-top bg-color="dark"></go-top>
     </div>
   </div>
 </template>
@@ -74,12 +76,14 @@
 import Navbar from "@/components/Navbar.vue";
 import CardProduct from "@/components/CardProduct.vue";
 import axios from "axios";
+import GoTop from "@inotom/vue-go-top";
 
 export default {
   name: "Foods",
   components: {
     Navbar,
     CardProduct,
+    GoTop,
   },
   // menampilkan data
   data() {
@@ -99,7 +103,7 @@ export default {
         .then((response) => this.setProducts(response.data))
         .catch((error) => console.log(error));
     },
-  },
+  },  
   // memanggil data untuk ditampilkan
   mounted() {
     axios

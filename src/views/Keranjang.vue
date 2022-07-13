@@ -48,7 +48,7 @@
               </div>
               <div class="col-8">
                 <div class="card-body">
-                  <h5 class="card-title">{{ keranjang.products.nama }}</h5>
+                  <h5 class="card-title" style="font-size:1rem">{{ keranjang.products.nama }}</h5>
                   <p class="card-text">
                     {{ keranjang.keterangan ? keranjang.keterangan : "-" }}
                   </p>
@@ -227,7 +227,7 @@ export default {
       axios
         .delete("http://localhost:3000/keranjangs/" + id)
         .then(() => {
-          this.$toast.error("Sukses Hapus Keranjang", {
+          this.$toast.error("Menu dihapus dari keranjang", {
             type: "error",
             position: "top-right",
             duration: 3000,
@@ -291,5 +291,3 @@ export default {
   },
 };
 </script>
-
-<style></style>

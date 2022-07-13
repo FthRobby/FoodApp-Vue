@@ -62,6 +62,11 @@
   color: rgb(228, 213, 213);
 }
 
+.bg-fei {
+  background-color: #583710;
+  color: #fff;
+}
+
 .text-fei {
   color: #583710;
 }
